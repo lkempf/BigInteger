@@ -1675,7 +1675,7 @@ public class BigInteger
     /// </summary>
     /// <param name="bits"></param>
     /// <param name="rng"></param>
-    public void genRandomBits(int bits, RNGCryptoServiceProvider rng)
+    public void genRandomBits(int bits, RandomNumberGenerator rng)
     {
         int dwords = bits >> 5;
         int remBits = bits & 0x1F;
@@ -2441,9 +2441,9 @@ public class BigInteger
     /// </summary>
     /// <param name="bits">Number of bit</param>
     /// <param name="confidence">Number of chosen bases</param>
-    /// <param name="rand">RNGCryptoServiceProvider object</param>
+    /// <param name="rand">RandomNumberGenerator object</param>
     /// <returns>A probably prime number</returns>
-    public static BigInteger genPseudoPrime(int bits, int confidence, RNGCryptoServiceProvider rand)
+    public static BigInteger genPseudoPrime(int bits, int confidence, RandomNumberGenerator rand)
     {
         BigInteger result = new BigInteger();
         bool done = false;
@@ -2494,7 +2494,7 @@ public class BigInteger
     /// <param name="bits">Number of bit</param>
     /// <param name="rand">Random object</param>
     /// <returns>Relatively prime number of this</returns>
-    public BigInteger genCoPrime(int bits, RNGCryptoServiceProvider rand)
+    public BigInteger genCoPrime(int bits, RandomNumberGenerator rand)
     {
         bool done = false;
         BigInteger result = new BigInteger();
